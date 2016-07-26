@@ -321,8 +321,8 @@ v_predicted = Snew.data(:,4);
 error_speed = sqrt((u_predicted-deep_u_vel_local(test_sample_indicies)).^2 + (v_predicted-deep_v_vel_local(test_sample_indicies)).^2);
 
 %Compute the total RMSE of the speed error
-total_rmse(i_munits) = sqrt( nanmean((u_predicted-deep_u_vel_local(test_sample_indicies)).^2 + (v_predicted-deep_v_vel_local(test_sample_indicies) ).^2) )
-
+total_rmse = sqrt( nanmean((u_predicted-deep_u_vel_local(test_sample_indicies)).^2 + (v_predicted-deep_v_vel_local(test_sample_indicies) ).^2) )
+disp(['Total Speed RMSE: ', num2str(total_rmse) ] )
 if SHOW_FIGURES 
     fig4=figure(4)
     scatter(u_predicted,deep_u_vel_local(test_sample_indicies))
