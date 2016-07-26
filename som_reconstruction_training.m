@@ -268,6 +268,9 @@ for i =1:length(sMapobs.codebook)
         end %if isempty
 end %for i=1:length(sMapobs.codebook) 
 
+%Save the correlation matrix
+cor_mat_file_name = strcat('Correlation_Matrix_',num2str(n_munits),'.mat');
+save(cor_mat_file_name,'COR_mat');
 %Set up a new map, this time initialised with the test data, we the same topolog as the previously trained map
 Snew=som_data_struct(test_data_matrix(:,:));
 Snew_norm=som_normalize(Snew,Sobsn);   
